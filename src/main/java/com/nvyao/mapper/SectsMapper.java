@@ -15,7 +15,7 @@ public interface SectsMapper {
     List<Sect> selectAll();
 
     /**
-     * 新增门派
+     * 新增门派，新增字段introduction，门派介绍
      * @param sect
      */
     @Insert("insert into sects(name, introduction, create_time, update_time) value (#{name}, #{introduction}, #{createTime}, #{updateTime})")
