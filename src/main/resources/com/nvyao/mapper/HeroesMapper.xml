@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nvyao.mapper.HeroesMapper">
+
+    <delete id="delete">
+        delete from
+        heroes
+        where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="page" resultType="com.nvyao.pojo.Hero">
+        select *
+        from heroes
+        <where>
+            <if test="name != null and name != ''">
+                name like concat('%',#{name},'%')
+            </if>
+            <if test="gender != null">
+                and gender = #{gender}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="begin != null and end != null">
+                and birthdate between #{begin} and #{end}
+            </if>
+        </where>
+        order by update_time desc
+        <!--limit #{page},#{pageSize}--><!--如果使用PageHelpder插件来分页，这行需要注释，否则打开-->
+    </select>
+
+    <update id="update">
+        update heroes
+        <set>
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="kungfu != null and kungfu != ''">
+                kungfu = #{kungfu},
+            </if>
+            <if test="gender != null">
+                gender = #{gender},
+            </if>
+            <if test="image != null and image != ''">
+                image = #{image},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+            <if test="birthdate != null">
+                birthdate = #{birthdate},
+            </if>
+            <if test="sectId != null">
+                sect_id = #{sectId},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+</mapper>
