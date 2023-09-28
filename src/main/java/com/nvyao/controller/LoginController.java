@@ -24,7 +24,7 @@ public class LoginController {
         log.info("{} 正在访问/login接口", hero.getUsername());
         Hero h = heroesService.login(hero);
 
-        //登录成功
+        //登录成功的时候
         if(h != null){
             HashMap<String, Object> claims = new HashMap<>();
             claims.put("id", h.getId());
