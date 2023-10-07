@@ -4,7 +4,6 @@ import com.nvyao.pojo.Hero;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
