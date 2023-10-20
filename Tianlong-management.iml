@@ -48,7 +48,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.30" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.30" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.30" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.30" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.30" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.30" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1" level="project" />
@@ -128,5 +127,8 @@
     <orderEntry type="library" name="Maven: io.micrometer:micrometer-core:1.9.15" level="project" />
     <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.12" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.latencyutils:LatencyUtils:2.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.7.16" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.30" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.9.7" level="project" />
   </component>
 </module>

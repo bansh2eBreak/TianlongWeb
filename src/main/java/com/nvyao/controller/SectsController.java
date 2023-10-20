@@ -1,12 +1,13 @@
 package com.nvyao.controller;
 
+import com.nvyao.anno.Log;
 import com.nvyao.pojo.Result;
 import com.nvyao.pojo.Sect;
 import com.nvyao.service.SectsService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 /**
@@ -20,10 +21,11 @@ public class SectsController {
 
     /**
      * 查询所有门派接口
+     *
      * @return
      */
     @GetMapping("/sects")
-    public Result getAllSects(){
+    public Result getAllSects() {
         log.info("调用了查询所有部门接口：/sects");
         List<Sect> sects = sectsService.getAllSects();
         return Result.success(sects);
@@ -31,10 +33,12 @@ public class SectsController {
 
     /**
      * 新增门派接口
+     *
      * @return
      */
+    @Log
     @PostMapping("/sects")
-    public Result addSect(@RequestBody Sect sect){
+    public Result addSect(@RequestBody Sect sect) {
         log.info("新增门派：{}", sect.getName());
         sectsService.addSect(sect);
         return Result.success();
@@ -42,11 +46,13 @@ public class SectsController {
 
     /**
      * 根据门派id删除门派
+     *
      * @param id 门派id
      * @return
      */
+    @Log
     @DeleteMapping("/sects/{id}")
-    public Result deleteSect(@PathVariable Integer id){
+    public Result deleteSect(@PathVariable Integer id) {
         log.info("根据门派id删除部门：{}", id);
         sectsService.deleteSect(id);
         return Result.success();
@@ -54,11 +60,12 @@ public class SectsController {
 
     /**
      * 根据门派id查询单个门派信息
+     *
      * @param id
      * @return
      */
     @GetMapping("/sects/{id}")
-    public Result selectSectById(@PathVariable Integer id){
+    public Result selectSectById(@PathVariable Integer id) {
         log.info("根据门派id查询：{}", id);
         Sect sect = sectsService.selectSectById(id);
         log.info("查询的门派数据是：{}", sect);
@@ -67,11 +74,13 @@ public class SectsController {
 
     /**
      * 根据门派id修改门派信息
+     *
      * @param sect
      * @return
      */
+    @Log
     @PutMapping("/sects")
-    public Result updateSectById(@RequestBody Sect sect){
+    public Result updateSectById(@RequestBody Sect sect) {
         log.info("更新部门信息，门派id：{} -- 门派名称：{}", sect.getId(), sect.getName());
         sectsService.updateSect(sect);
         return Result.success();

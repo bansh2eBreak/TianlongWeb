@@ -32,7 +32,7 @@ public class LoginController {
             claims.put("name", h.getName());
 
             String jwttoken = JwtUtils.generateJwt(claims);
-            log.info("{} 员工登录成功，分配的jwt是：{}", hero.getUsername(), jwttoken);
+            log.info("{} 英雄登录成功，分配的jwt是：{}", hero.getUsername(), jwttoken);
             return Result.success(jwttoken);
         }
         //登录失败
