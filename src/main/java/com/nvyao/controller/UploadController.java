@@ -1,5 +1,6 @@
 package com.nvyao.controller;
 
+import com.nvyao.anno.Log;
 import com.nvyao.pojo.Result;
 import com.nvyao.utils.AliOSSUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,7 @@ public class UploadController {
     @Autowired
     private AliOSSUtils aliOSSUtils;
 
+    @Log
     @PostMapping("/upload")
     public Result fileUpload(MultipartFile image) throws Exception {
         log.info("文件上传接口：{}", image.getOriginalFilename());

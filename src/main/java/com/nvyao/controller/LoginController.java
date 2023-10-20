@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.HashMap;
-import java.util.Map;
 
 @Slf4j
 @RestController
@@ -20,12 +20,12 @@ public class LoginController {
     private HeroesService heroesService;
 
     @PostMapping("/login")
-    public Result login(@RequestBody Hero hero){
+    public Result login(@RequestBody Hero hero) {
         log.info("{} 正在访问/login接口", hero.getUsername());
         Hero h = heroesService.login(hero);
 
         //登录成功的时候
-        if(h != null){
+        if (h != null) {
             HashMap<String, Object> claims = new HashMap<>();
             claims.put("id", h.getId());
             claims.put("username", h.getUsername());

@@ -31,6 +31,7 @@ public class LogAspect {
 
         //操作人ID、操作时间、操作类名方法名、参数、返回值和耗时
         //获取请求头中的jwt令牌，解析
+
         String jwt = httpServletRequest.getHeader("token");
         Claims claims = JwtUtils.parseJwt(jwt);
         Integer operateUser = (Integer) claims.get("id");
