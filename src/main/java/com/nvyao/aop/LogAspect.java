@@ -63,7 +63,7 @@ public class LogAspect {
         operateLogMapper.insert(operateLog);
 
         log.info("AOP记录日志操作，{}", operateLog);
-        
+
         return result;
     }
 
