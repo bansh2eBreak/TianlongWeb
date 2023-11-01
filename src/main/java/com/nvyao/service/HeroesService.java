@@ -2,15 +2,15 @@ package com.nvyao.service;
 
 import com.nvyao.pojo.Hero;
 import com.nvyao.pojo.PageBean;
-import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-@Service
 public interface HeroesService {
 
     /**
      * 传统的分页做法
+     *
      * @param page
      * @param pageSize
      * @param name
@@ -23,6 +23,7 @@ public interface HeroesService {
 
     /**
      * 使用PageHelper分页插件
+     *
      * @param page
      * @param pageSize
      * @param name
